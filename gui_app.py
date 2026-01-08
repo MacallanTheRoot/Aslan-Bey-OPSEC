@@ -7,19 +7,19 @@ import pandas as pd
 from datetime import datetime
 
 # Import Core Logic
-# We need to add the parent directory to sys.path to import stealth_shred if running from inside
 import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# sys.path append not strictly needed if running from root, but good for safety
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
-from stealth_shred.core.detector import FileDetector
-from stealth_shred.core.walker import DirectoryWalker
-from stealth_shred.core.logger import AuditLogger
-from stealth_shred.core.reporter import Reporter
-from stealth_shred.handlers.utils.shredder import Shredder
-from stealth_shred.handlers.image_handler import ImageHandler
-from stealth_shred.handlers.pdf_handler import PdfHandler
-from stealth_shred.handlers.office_handler import OfficeHandler
-from stealth_shred.handlers.media_handler import MediaHandler
+from core.detector import FileDetector
+from core.walker import DirectoryWalker
+from core.logger import AuditLogger
+from core.reporter import Reporter
+from handlers.utils.shredder import Shredder
+from handlers.image_handler import ImageHandler
+from handlers.pdf_handler import PdfHandler
+from handlers.office_handler import OfficeHandler
+from handlers.media_handler import MediaHandler
 
 # --- CONFIGURATION & THEME ---
 st.set_page_config(

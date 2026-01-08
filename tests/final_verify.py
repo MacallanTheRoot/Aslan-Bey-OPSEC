@@ -11,9 +11,9 @@ import magic
 # Adjust path to import core modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stealth_shred.core.cli import cli
-from stealth_shred.core.detector import FileDetector
-from stealth_shred.handlers.office_handler import OfficeHandler
+from core.cli import cli
+from core.detector import FileDetector
+from handlers.office_handler import OfficeHandler
 from click.testing import CliRunner
 
 TEST_DIR = "final_test_data"

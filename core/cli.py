@@ -4,17 +4,13 @@ import sys
 from tqdm import tqdm
 from colorama import init, Fore, Style
 
-from .walker import DirectoryWalker
-from .logger import AuditLogger
-from .reporter import Reporter
-from .detector import FileDetector
-from ..handlers.utils.shredder import Shredder
+from handlers.utils.shredder import Shredder
 
-# Import handlers (will implement these next)
-# from ..handlers.image_handler import ImageHandler
-# from ..handlers.pdf_handler import PdfHandler
-# from ..handlers.office_handler import OfficeHandler
-# from ..handlers.media_handler import MediaHandler
+# Import handlers
+# from handlers.image_handler import ImageHandler
+# from handlers.pdf_handler import PdfHandler
+# from handlers.office_handler import OfficeHandler
+# from handlers.media_handler import MediaHandler
 
 # Initialize Colorama
 init(autoreset=True)
@@ -60,25 +56,25 @@ def clean(ctx, target_path, recursive):
     """
     # Lazy import handlers to avoid errors before they exist
     try:
-        from ..handlers.image_handler import ImageHandler
+        from handlers.image_handler import ImageHandler
         ctx.register_handler('image', ImageHandler)
     except ImportError:
         pass
         
     try:
-        from ..handlers.pdf_handler import PdfHandler
+        from handlers.pdf_handler import PdfHandler
         ctx.register_handler('pdf', PdfHandler)
     except ImportError:
         pass
 
     try:
-        from ..handlers.office_handler import OfficeHandler
+        from handlers.office_handler import OfficeHandler
         ctx.register_handler('office', OfficeHandler)
     except ImportError:
         pass
         
     try:
-        from ..handlers.media_handler import MediaHandler
+        from handlers.media_handler import MediaHandler
         ctx.register_handler('media', MediaHandler)
     except ImportError:
         pass
