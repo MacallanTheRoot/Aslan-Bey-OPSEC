@@ -1,0 +1,13 @@
+click
+tqdm
+Pillow
+piexif
+pikepdf
+mutagen
+python-magic-bin; sys_platform == 'win32'
+python-magic; sys_platform != 'win32'
+defusedxml
+colorama
+streamlit
+plotly
+pandas

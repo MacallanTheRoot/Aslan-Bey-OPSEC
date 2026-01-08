@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Logs and Databases
+logs/
+*.log
+*.jsonl
+
+# Test Data
+test_data/
+final_test_data/
+*.tmp_shred
+
+# OS specific
+.DS_Store
+Thumbs.db
